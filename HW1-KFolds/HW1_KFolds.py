@@ -1,3 +1,7 @@
+## Vincent Purcell
+## Data Mining 2 - HW1 K Folds
+## Some of code is modified from the code Professor Breitzman provided us.
+
 import csv
 import pandas as pd
 import re
@@ -30,10 +34,11 @@ data = numpy.array(data)
 X = data[:,0:9]
 Y = data[:,9]
 
+# Columns and example data row
 print(columns)
 print(data[0])
 
-kf = KFold(n_splits=5, random_state=7, shuffle=True)
+kf = KFold(n_splits=5, random_state=35, shuffle=True)
 kf
 
 for index, (train, test) in enumerate(kf.split(X), 1):
@@ -41,4 +46,31 @@ for index, (train, test) in enumerate(kf.split(X), 1):
     print(f'Split {index}:\n')
     
     print(test)
+    print('\n')
+
+from sklearn.neural_network import MLPClassifier
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+
+for index, (train, test) in enumerate(kf.split(X), 1):
+    
+    print(f'Split {index}:\n')
+    
+    X_train = X[train]
+    X_test = X[test]
+    y_train = Y[train]
+    y_test = Y[test]
+    
+    scaler.fit(X_train)
+    
+    X_train = scaler.transform(X_train)
+    X_test = scaler.transform(X_test)
+    
+    mlp = MLPClassifier(hidden_layer_sizes=(30,30,30,3), max_iter=2000)
+    mlp.fit(X_train,y_train)
+    predictions = mlp.predict(X_test)
+
+    print(confusion_matrix(y_test, predictions))
+    print(classification_report(y_test, predictions))
+    
     print('\n')
