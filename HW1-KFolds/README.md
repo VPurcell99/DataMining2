@@ -7,10 +7,10 @@ I modified professor Breitzman's KFolds Code on Breast Cancer tumor classificati
 Data Found at:
 https://www.kaggle.com/adityakadiwal/water-potability
 
-Python Code:    HW1_kfolds.py
-Jupyter:        HW1_KFolds_jupyternb.ipynb
-Jupyter HTML:   HW1_JupyterOutput.HTML
+Python Code:    	HW1_kfolds.py
+Jupyter:        	HW1_KFolds_jupyternb.ipynb
+Jupyter HTML:   	HW1_JupyterOutput.HTML
+Data:           	water_potability.csv
+ChallengeQuestion:	HW1-ChallengeQuestion.pdf
 
 I Used the MLP NN in sklearn and used 5 Fold Analysis.
-
-Challenge Question:
