@@ -11,3 +11,5 @@ mlbPredictions.html             HTML output of Jupyter NB
 populateFutureGameDataDB.py     Populates Future Game Data DBs for specified date range
 presentation.pptx               Powerpoint presentation of findings
 presentation.mp4                Powerpoint presentation video (also found at https://www.youtube.com/watch?v=wv4UxFIB35s)
+
+Various JSONs is all the data used
